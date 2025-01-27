@@ -21,9 +21,9 @@ class CLIPVisionTower(nn.Module):
 
     def load_model(self):
         self.image_processor = CLIPImageProcessor.from_pretrained(self.vision_tower_name)
-        # self.vision_tower = CLIPVisionModel.from_pretrained(self.vision_tower_name)
-        self.vision_tower = CLIPVisionModel.from_pretrained(
-            '/home/liyifa11/MyCodes/EmoDQ/EmoDQ/checkpoints/clip-vit-large-patch14-336')
+        self.vision_tower = CLIPVisionModel.from_pretrained(self.vision_tower_name)
+        # self.vision_tower = CLIPVisionModel.from_pretrained(
+        #     '/home/EmoLA/checkpoints/clip-vit-large-patch14-336')
 
         self.vision_tower.requires_grad_(False)
 

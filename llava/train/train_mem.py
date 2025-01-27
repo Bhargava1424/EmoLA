@@ -7,6 +7,10 @@ from llava.train.llama_flash_attn_monkey_patch import replace_llama_attn_with_fl
 
 replace_llama_attn_with_flash_attn()
 
+import torch
+
+torch.cuda.empty_cache()
+
 from llava.train.train import train
 
 if __name__ == "__main__":

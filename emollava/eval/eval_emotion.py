@@ -174,23 +174,23 @@ def get_args():
     parser = argparse.ArgumentParser()
     
     parser.add_argument("--version", type=str, default="v1")
-    parser.add_argument("--base-path", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/checkpoints/llava-v1.5-7b")
+    parser.add_argument("--base-path", type=str, default="/home/EmoLA/checkpoints/llava-v1.5-7b")
     parser.add_argument("--data_name", type=str, default="MMAFEDB")
-    # parser.add_argument("--model-path", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/saved_checkpoints/llava-v1.5-7b-lora-emocls_face_landmark_stage2")
-    # parser.add_argument("--model-path", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/saved_checkpoints/llava-v1.5-7b-lora-emocls_nostage1-onlyfacefeatures_stage2")
-    parser.add_argument("--model-path", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/saved_checkpoints/llava-v1.5-7b-lora-aucls-AU_instruct_fold23_no_dup")
+    # parser.add_argument("--model-path", type=str, default="/home/EmoLA/saved_checkpoints/llava-v1.5-7b-lora-emocls_face_landmark_stage2")
+    # parser.add_argument("--model-path", type=str, default="/home/EmoLA/saved_checkpoints/llava-v1.5-7b-lora-emocls_nostage1-onlyfacefeatures_stage2")
+    parser.add_argument("--model-path", type=str, default="/home/EmoLA/saved_checkpoints/llava-v1.5-7b-lora-aucls-AU_instruct_fold23_no_dup")
     parser.add_argument("--pretrain_query", type=bool, default=False)
     parser.add_argument("--pretrain_query_decoder", type=bool, default=False)
     parser.add_argument("--pretrain_query_bert", type=bool, default=False)
     parser.add_argument("--pretrain_deepquery", type=bool, default=False)
     parser.add_argument("--pretrain_icondeepquery", type=bool, default=False)
-    parser.add_argument("--pretrain_face_feature_projector", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmoDQ/saved_checkpoints/llava-v1.5-7b-emocls_face_landmark')
-    parser.add_argument("--pretrain_landmark_feature_projector", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmoDQ/saved_checkpoints/llava-v1.5-7b-emocls_face_landmark')
+    parser.add_argument("--pretrain_face_feature_projector", type=str, default='/home/EmoLA/saved_checkpoints/llava-v1.5-7b-emocls_face_landmark')
+    parser.add_argument("--pretrain_landmark_feature_projector", type=str, default='/home/EmoLA/saved_checkpoints/llava-v1.5-7b-emocls_face_landmark')
 
-    parser.add_argument("--model-base", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/checkpoints/llava-v1.5-7b")
+    parser.add_argument("--model-base", type=str, default="/home/EmoLA/checkpoints/llava-v1.5-7b")
     parser.add_argument("--ann-file", type=str, default='/egr/research-actionlab/liyifa11/MyCodes/EmoDQ/EmoDQ/dataset/emotion_classification_dataset/emotion_test_dataset/annotations/RAF-DB.json')
-    parser.add_argument("--data-dir", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmoDQ/dataset/emotion_test_dataset')
-    parser.add_argument("--output-dir", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmoDQ/output_test')
+    parser.add_argument("--data-dir", type=str, default='/home/EmoLA/dataset/emotion_test_dataset')
+    parser.add_argument("--output-dir", type=str, default='/home/EmoLA/output_test')
     parser.add_argument("--num_queries", type=int, default=100)
     parser.add_argument("--top_p", type=float, default=0.5)
     parser.add_argument("--num_beams", type=int, default=2)
@@ -282,7 +282,7 @@ def eval():
     data_dir = args.data_dir
     ann_file = args.ann_file
     data_name = ann_file.split('/')[-1].replace('.json', '')
-    # ann_file = '/home/liyifa11/MyCodes/EmoDQ/EmoDQ/dataset/emo_instruction/emotion_instruct_wo_AffectNet.json'
+    # ann_file = '/home/EmoLA/dataset/emo_instruction/emotion_instruct_wo_AffectNet.json'
     annos = parse_anno(ann_file)
 
     output_dir = f'{args.output_dir}/{model_name}/{data_name}'

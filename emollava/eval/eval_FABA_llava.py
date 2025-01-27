@@ -11,7 +11,7 @@ from llava.conversation import conv_templates, SeparatorStyle
 from llava import conversation as conversation_lib
 
 import sys
-sys.path.append('/home/liyifa11/MyCodes/EmoDQ/EmoDQ/')
+sys.path.append('/home/EmoLA/')
 from llava.model.builder import load_pretrained_model
 
 from llava.model import *
@@ -173,18 +173,18 @@ def get_args():
     parser = argparse.ArgumentParser()
     
     parser.add_argument("--version", type=str, default="v1")
-    parser.add_argument("--base-path", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/checkpoints/llava-v1.5-7b")
+    parser.add_argument("--base-path", type=str, default="/home/EmoLA/checkpoints/llava-v1.5-7b")
     parser.add_argument("--task-type", type=str, default="AU")
-    parser.add_argument("--model-path", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/saved_checkpoints/llava-v1.5-7b-AUgpt-only-tune-landmark-projector-gptanno_new")
+    parser.add_argument("--model-path", type=str, default="/home/EmoLA/saved_checkpoints/llava-v1.5-7b-AUgpt-only-tune-landmark-projector-gptanno_new")
     parser.add_argument("--extra-name", type=str, default=None)
 
-    parser.add_argument("--pretrain_face_feature_projector", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmoDQ/saved_checkpoints/llava-v1.5-7b-AUgpt-only-tune-landmark-projector-gptanno_new')
-    parser.add_argument("--pretrain_landmark_feature_projector", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmoDQ/saved_checkpoints/llava-v1.5-7b-AUgpt-only-tune-landmark-projector-gptanno_new')
+    parser.add_argument("--pretrain_face_feature_projector", type=str, default='/home/EmoLA/saved_checkpoints/llava-v1.5-7b-AUgpt-only-tune-landmark-projector-gptanno_new')
+    parser.add_argument("--pretrain_landmark_feature_projector", type=str, default='/home/EmoLA/saved_checkpoints/llava-v1.5-7b-AUgpt-only-tune-landmark-projector-gptanno_new')
 
-    parser.add_argument("--model-base", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/checkpoints/llava-v1.5-7b")
+    parser.add_argument("--model-base", type=str, default="/home/EmoLA/checkpoints/llava-v1.5-7b")
     parser.add_argument("--ann-file", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmotionInstructData/gpt4_annotated/AU_test.json')
-    parser.add_argument("--data-dir", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmoDQ/dataset/emotion_test_dataset/test_data')
-    parser.add_argument("--output-dir", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmoDQ/output_test')
+    parser.add_argument("--data-dir", type=str, default='/home/EmoLA/dataset/emotion_test_dataset/test_data')
+    parser.add_argument("--output-dir", type=str, default='/home/EmoLA/output_test')
     parser.add_argument("--num_queries", type=int, default=100)
     parser.add_argument("--top_p", type=float, default=0.5)
     parser.add_argument("--num_beams", type=int, default=2)

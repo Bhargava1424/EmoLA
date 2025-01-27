@@ -1,6 +1,6 @@
 #!/bin/bash
 export WANDB_PORT=8086
-GPU_ID="localhost:0,1,2,4" # 0,1,2,3,4,5,6,7
+GPU_ID="localhost:0" # 0,1,2,3,4,5,6,7
 SEED=1
 APPEND_NAME="SEED1"
 DATA_PATH='./data/FABAInstruct/train/train_emotion_anno.json'

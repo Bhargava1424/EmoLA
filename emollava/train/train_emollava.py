@@ -368,6 +368,8 @@ def train():
     if list(pathlib.Path(training_args.output_dir).glob("checkpoint-*")):
         trainer.train(resume_from_checkpoint=True)
     else:
+        os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+        torch.cuda.empty_cache()
         trainer.train()
     trainer.save_state()
 

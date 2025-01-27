@@ -200,24 +200,24 @@ def get_args():
     # parser.add_argument("--model-path", type=str, default="/home/liyifa11/MyCodes/LLaVA/checkpoints/llava-llava-v1.5-7b-saveall_only_query_pascolvoc")
     
     parser.add_argument("--version", type=str, default="v1")
-    # parser.add_argument("--base-path", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/checkpoints/llava-v1.5-7b")
-    parser.add_argument("--base-path", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/checkpoints/vicuna-7b-v1.5")
+    # parser.add_argument("--base-path", type=str, default="/home/EmoLA/checkpoints/llava-v1.5-7b")
+    parser.add_argument("--base-path", type=str, default="/home/EmoLA/checkpoints/vicuna-7b-v1.5")
     # parser.add_argument("--task-type", type=str, default="AU")
     parser.add_argument("--task-type", type=str, default="emotion")
-    parser.add_argument("--model-path", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/saved_checkpoints/llava-v1.5-7b-lora-aucls-AU_instruct_fold23_no_dup")
-    # parser.add_argument("--model-path", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/saved_checkpoints/llava-vicuna-7b-v1.5-lora-after_ExpW_wo_AffectNet_wotraining_projector")
+    parser.add_argument("--model-path", type=str, default="/home/EmoLA/saved_checkpoints/llava-v1.5-7b-lora-aucls-AU_instruct_fold23_no_dup")
+    # parser.add_argument("--model-path", type=str, default="/home/EmoLA/saved_checkpoints/llava-vicuna-7b-v1.5-lora-after_ExpW_wo_AffectNet_wotraining_projector")
     parser.add_argument("--pretrain_query", type=bool, default=False)
     parser.add_argument("--pretrain_query_decoder", type=bool, default=False)
     parser.add_argument("--pretrain_deepquery", type=bool, default=True)
 
-    parser.add_argument("--model-base", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/checkpoints/llava-v1.5-7b")
-    # parser.add_argument("--model-base", type=str, default="/home/liyifa11/MyCodes/EmoDQ/EmoDQ/checkpoints/vicuna-7b-v1.5")
+    parser.add_argument("--model-base", type=str, default="/home/EmoLA/checkpoints/llava-v1.5-7b")
+    # parser.add_argument("--model-base", type=str, default="/home/EmoLA/checkpoints/vicuna-7b-v1.5")
     # parser.add_argument("--subdir", type=str, default='val2017')
     parser.add_argument("--ann-file", type=str, default='/egr/research-actionlab/liyifa11/MyCodes/EmoDQ/EmoDQ/dataset/emotion_classification_dataset/emotion_test_dataset/annotations/RAF-DB.json')
-    # parser.add_argument("--ann-file", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmoDQ/dataset/AU_recognition_dataset/AU_test_dataset/annotations/DISFA/fold1.json')
-    # parser.add_argument("--ann-file", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmoDQ/dataset/AU_recognition_dataset/AU_test_dataset/annotations/GFT/GFT.json')
-    parser.add_argument("--data-dir", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmoDQ/dataset/emotion_test_dataset')
-    parser.add_argument("--output-dir", type=str, default='/home/liyifa11/MyCodes/EmoDQ/EmoDQ/output_test')
+    # parser.add_argument("--ann-file", type=str, default='/home/EmoLA/dataset/AU_recognition_dataset/AU_test_dataset/annotations/DISFA/fold1.json')
+    # parser.add_argument("--ann-file", type=str, default='/home/EmoLA/dataset/AU_recognition_dataset/AU_test_dataset/annotations/GFT/GFT.json')
+    parser.add_argument("--data-dir", type=str, default='/home/EmoLA/dataset/emotion_test_dataset')
+    parser.add_argument("--output-dir", type=str, default='/home/EmoLA/output_test')
     parser.add_argument("--num_queries", type=int, default=100)
     parser.add_argument("--top_p", type=float, default=0.5)
     parser.add_argument("--num_beams", type=int, default=2)
@@ -332,7 +332,7 @@ def eval():
         data_name = ann_file.split('/')[-1].replace('.json', '')
     elif args.task_type == 'AU':
         data_name = '_'.join(ann_file.split('/')[-2:]).replace('.json', '')
-    # ann_file = '/home/liyifa11/MyCodes/EmoDQ/EmoDQ/dataset/emo_instruction/emotion_instruct_wo_AffectNet.json'
+    # ann_file = '/home/EmoLA/dataset/emo_instruction/emotion_instruct_wo_AffectNet.json'
     annos = parse_anno(ann_file)
 
     output_dir = f'{args.output_dir}/{model_name}/{data_name}'
@@ -455,7 +455,7 @@ if __name__ == '__main__':
     #     data_name = ann_file.split('/')[-1].replace('.json', '')
     # elif args.task_type == 'AU':
     #     data_name = '_'.join(ann_file.split('/')[-2:]).replace('.json', '')
-    # # ann_file = '/home/liyifa11/MyCodes/EmoDQ/EmoDQ/dataset/emo_instruction/emotion_instruct_wo_AffectNet.json'
+    # # ann_file = '/home/EmoLA/dataset/emo_instruction/emotion_instruct_wo_AffectNet.json'
     # annos = parse_anno(ann_file)
 
     # output_dir = f'{args.output_dir}/{model_name}/{data_name}'
